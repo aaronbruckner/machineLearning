@@ -17,10 +17,11 @@ for iter = 1:num_iters
     %       of the cost function (computeCost) and gradient here.
     %
 
-
-
-
-
+    hypothDiff = (X * theta) - y;    
+    
+    for thetaI = 1 : length(theta)
+      theta(thetaI) = theta(thetaI) - (alpha / m * sum(hypothDiff .* X(:, thetaI)));
+    end
 
 
     % ============================================================
